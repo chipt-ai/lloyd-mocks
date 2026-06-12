@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AiVibeStack — Compliant AI Patient Nurture for Clinics & Med Spas</title>
+<meta name="description" content="A HIPAA-compliant AI agent that answers, texts, and nurtures every new patient lead the moment it arrives. Built and run for you, inside our supplied HIPAA-compliant CRM." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15183A;
+    --ink-soft:#222654;
+    --paper:#FAF7F0;
+    --paper-2:#F2ECDF;
+    --gold:#BE9A4E;
+    --gold-deep:#A07F33;
+    --teal:#1F6F6B;
+    --teal-bright:#2E9A8F;
+    --slate:#54586B;
+    --line:rgba(21,24,58,.12);
+    --line-light:rgba(250,247,240,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    color:var(--gold-deep);
+  }
+  a{color:inherit}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(250,247,240,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:19px;letter-spacing:-.01em}
+  .brand span{color:var(--gold-deep)}
+  .nav-tag{font-size:12px;color:var(--slate);letter-spacing:.04em}
+  .nav-links{display:flex;gap:26px;align-items:center;font-size:14px;color:var(--slate)}
+  .nav-links a{text-decoration:none}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{
+    display:inline-block;font-weight:600;font-size:15px;text-decoration:none;
+    padding:11px 20px;border-radius:999px;transition:transform .15s ease,box-shadow .2s ease;
+  }
+  .btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 1px 0 var(--gold-deep)}
+  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(190,154,78,.35)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .btn-light{background:var(--gold);color:var(--ink)}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none}.nav-tag{display:none}}
+
+  /* hero */
+  .hero{padding:88px 0 64px;position:relative;overflow:hidden}
+  .hero:after{
+    content:"";position:absolute;right:-160px;top:-120px;width:520px;height:520px;
+    background:radial-gradient(circle,rgba(190,154,78,.18),transparent 62%);pointer-events:none;
+  }
+  .live{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--teal);font-weight:600;letter-spacing:.04em;margin-bottom:20px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 0 0 rgba(46,154,143,.5);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,154,143,.5)}70%{box-shadow:0 0 0 10px rgba(46,154,143,0)}100%{box-shadow:0 0 0 0 rgba(46,154,143,0)}}
+  .hero h1{font-size:clamp(38px,6.2vw,68px);max-width:14ch;margin:14px 0 0}
+  .hero h1 em{font-style:italic;color:var(--gold-deep)}
+  .hero-sub{font-size:clamp(17px,2.2vw,20px);color:var(--slate);max-width:54ch;margin:24px 0 32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:40px;padding-top:26px;border-top:1px solid var(--line)}
+  .trust span{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink-soft);font-weight:500}
+  .check{color:var(--teal);font-weight:700}
+
+  /* sections */
+  section{padding:74px 0}
+  .sec-head{max-width:60ch}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);margin:12px 0 0}
+  .sec-head p{color:var(--slate);font-size:17px;margin-top:16px}
+
+  .leak{background:var(--ink);color:var(--paper)}
+  .leak .eyebrow{color:var(--gold)}
+  .leak h2{color:var(--paper)}
+  .leak p.lede{color:rgba(250,247,240,.72)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+  .card{background:rgba(250,247,240,.05);border:1px solid var(--line-light);border-radius:16px;padding:26px}
+  .card .k{font-family:'Fraunces',serif;font-size:21px;font-weight:600;margin-bottom:10px}
+  .card p{color:rgba(250,247,240,.74);font-size:15px}
+  @media(max-width:720px){.cards{grid-template-columns:1fr}}
+
+  /* does */
+  .does-list{margin-top:40px;border-top:1px solid var(--line)}
+  .does-row{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+  .does-row .n{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--gold-deep);padding-top:4px}
+  .does-row h3{font-size:20px;margin-bottom:6px}
+  .does-row p{color:var(--slate);font-size:15.5px;max-width:62ch}
+
+  /* moat / signature */
+  .moat{background:var(--paper-2)}
+  .seal{
+    margin-top:40px;background:var(--ink);color:var(--paper);border-radius:20px;
+    padding:40px;display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center;
+    border:1px solid var(--ink);box-shadow:0 20px 50px rgba(21,24,58,.18)
+  }
+  .badge{
+    aspect-ratio:1;border-radius:50%;border:2px solid var(--gold);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    background:radial-gradient(circle at 50% 35%,rgba(190,154,78,.18),transparent 70%);
+  }
+  .badge .cad{font-size:42px;line-height:1;color:var(--gold)}
+  .badge .bt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--gold);margin-top:10px}
+  .seal ul{list-style:none;display:grid;gap:14px}
+  .seal li{display:flex;gap:12px;font-size:15.5px;color:rgba(250,247,240,.9)}
+  .seal li b{color:#fff;font-weight:600}
+  .seal .ck{color:var(--teal-bright);font-weight:700;flex:none}
+  @media(max-width:720px){.seal{grid-template-columns:1fr;text-align:center;padding:30px}.badge{max-width:160px;margin:0 auto}.seal li{text-align:left}}
+
+  /* proof */
+  .proof{background:var(--ink);color:var(--paper)}
+  .proof .eyebrow{color:var(--gold)}
+  .proof h2{color:var(--paper)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+  .stat .big{font-family:'Fraunces',serif;font-size:38px;font-weight:600;color:var(--gold)}
+  .stat .lbl{font-size:13px;color:rgba(250,247,240,.66);margin-top:4px}
+  .proof .note{margin-top:34px;font-size:16px;color:rgba(250,247,240,.82);max-width:64ch}
+  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* how */
+  .steps{counter-reset:s;margin-top:40px;display:grid;gap:2px}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .step:before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:'IBM Plex Mono',monospace;color:var(--gold-deep);font-size:15px;padding-top:3px}
+  .step h3{font-size:19px;margin-bottom:4px}
+  .step p{color:var(--slate);font-size:15px}
+
+  /* invest */
+  .invest{background:var(--paper-2);text-align:center}
+  .invest h2{font-size:clamp(28px,4vw,40px)}
+  .invest p{color:var(--slate);max-width:56ch;margin:16px auto 0;font-size:17px}
+  .invest .price{font-family:'Fraunces',serif;font-size:26px;color:var(--ink);margin-top:24px}
+  .invest .price small{display:block;font-family:'Inter';font-size:14px;color:var(--slate);font-weight:400;margin-top:6px}
+
+  /* form */
+  .start{background:var(--ink);color:var(--paper)}
+  .start .eyebrow{color:var(--gold)}
+  .start h2{color:var(--paper);font-size:clamp(28px,4vw,40px)}
+  .form{margin-top:34px;background:rgba(250,247,240,.04);border:1px solid var(--line-light);border-radius:20px;padding:34px;max-width:680px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.grid2{grid-template-columns:1fr}}
+  label{display:block;font-size:13px;color:rgba(250,247,240,.7);margin:14px 0 6px;font-weight:500}
+  input,select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line-light);background:rgba(250,247,240,.06);color:var(--paper);font-size:15px;font-family:inherit}
+  input::placeholder{color:rgba(250,247,240,.4)}
+  input:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+  .consent{display:flex;gap:12px;margin-top:22px;align-items:flex-start}
+  .consent input{width:18px;height:18px;flex:none;margin-top:3px}
+  .consent p{font-size:12.5px;color:rgba(250,247,240,.66);line-height:1.5}
+  .consent a{color:var(--gold);text-decoration:underline}
+  .submit{margin-top:24px;width:100%;border:none;cursor:pointer;font-size:16px;padding:15px;font-weight:600}
+  .fineprint{font-size:12px;color:rgba(250,247,240,.5);margin-top:16px;line-height:1.5}
+
+  /* footer */
+  .foot{background:var(--paper);padding:56px 0 40px;text-align:center}
+  .verse{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:var(--ink);max-width:48ch;margin:0 auto}
+  .foot p.body{color:var(--slate);font-size:15px;max-width:56ch;margin:18px auto 0}
+  .vibe{font-family:'Fraunces',serif;font-size:17px;color:var(--gold-deep);margin-top:24px}
+  .copy{font-size:12.5px;color:var(--slate);margin-top:30px;border-top:1px solid var(--line);padding-top:24px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dot{animation:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="brand">AiVibe<span>Stack</span></div>
+      <div class="nav-tag">· for clinics &amp; med spas</div>
+    </div>
+    <div class="nav-links">
+      <a href="#leak">The leak</a>
+      <a href="#does">What it does</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#start" class="btn btn-gold">Hold my slot</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="live"><span class="dot"></span> Verified live deployment · running a multi-clinic group today</div>
+    <div class="eyebrow">For doctors, clinics, med spas &amp; aesthetic practices</div>
+    <h1>Stop losing the patients you <em>already paid for.</em></h1>
+    <p class="hero-sub">A HIPAA-compliant AI agent answers, texts, and nurtures every new lead the moment it lands — qualifies them, sends your intake and doctor-fee link, then hands the warm ones to your team. Built and run for you, inside your CRM. Compliant, and able to prove it.</p>
+    <div class="hero-cta">
+      <a href="#start" class="btn btn-gold">Hold my build slot →</a>
+      <a href="#does" class="btn btn-ghost">See how it works</a>
+    </div>
+    <div class="trust">
+      <span><span class="check">✓</span> HIPAA-designated environment</span>
+      <span><span class="check">✓</span> Business Associate Agreement in place</span>
+      <span><span class="check">✓</span> AI-voice consent done right</span>
+      <span><span class="check">✓</span> Runs in our HIPAA-compliant CRM</span>
+    </div>
+  </div>
+</header>
+
+<section class="leak" id="leak">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <div class="eyebrow">The problem</div>
+      <h2>You pay for every lead twice.</h2>
+      <p class="lede">Once to the ad platform. Again when no one reaches them in time. In medical aesthetics, the practice that answers first usually wins the patient — and a two-person front desk can't be first every time.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Speed beats everything</div>
+        <p>Respond in minutes and contact rates soar. Respond in hours and the lead has already booked with someone else.</p>
+      </div>
+      <div class="card">
+        <div class="k">The follow-up grind</div>
+        <p>Call, text, email — for days, every day — is more than two humans can sustain on top of running the clinic.</p>
+      </div>
+      <div class="card">
+        <div class="k">"Nobody answers"</div>
+        <p>So the expensive leads get written off as marginal and quietly die in the pipeline. That's money you already spent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="does">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <div class="eyebrow">What it does</div>
+      <h2>A tireless first responder that knows where the line is.</h2>
+      <p>It does the relentless first-touch and follow-up your team can't keep up with — and routes the medical conversation to a human, every time.</p>
+    </div>
+    <div class="does-list">
+      <div class="does-row"><div class="n">01</div><div><h3>Answers in under two minutes</h3><p>The second a lead hits submit, the agent texts and calls — voice and SMS, day or night, weekends included.</p></div></div>
+      <div class="does-row"><div class="n">02</div><div><h3>Compassionate, on-script, never clinical</h3><p>It answers general questions warmly and qualifies interest — but it never gives dosing or medical advice. That stays with your provider.</p></div></div>
+      <div class="does-row"><div class="n">03</div><div><h3>Drives the two actions that matter</h3><p>Sends your intake form and your doctor-fee payment link, framed the way any appointment works — so qualified patients self-advance.</p></div></div>
+      <div class="does-row"><div class="n">04</div><div><h3>Hands the warm ones to your team</h3><p>When a lead is ready, it books or transfers to a human advisor to close — your people do what they're best at.</p></div></div>
+      <div class="does-row"><div class="n">05</div><div><h3>Follows up for days, automatically</h3><p>It keeps nurturing on a multi-day cadence until the patient converts or opts out. Nothing slips because someone got busy.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="moat" id="compliance">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <div class="eyebrow">The part your competitors can't show you</div>
+      <h2>Compliant — and able to prove it.</h2>
+      <p>An AI voice call is legally a robocall. Most "AI agents" sold to clinics quietly skip the parts that keep that legal. We don't — and that's the difference between a tool you can defend and one you can't.</p>
+      <p style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:#15183A;margin-top:18px;max-width:62ch">Compliance is expensive when it’s ignored, cheaper when it’s done right — and with us, it’s built right into the AI.</p>
+    </div>
+    <div class="seal">
+      <div class="badge">
+        <div class="cad">⚕</div>
+        <div class="bt">HIPAA · BAA · TCPA</div>
+      </div>
+      <ul>
+        <li><span class="ck">✓</span><span><b>AI-voice consent, written correctly.</b> The opt-in specifically authorizes automated and AI-generated voice calls — the clause almost everyone leaves out.</span></li>
+        <li><span class="ck">✓</span><span><b>HIPAA-designated, with a BAA in place.</b> Patient data stays in a covered environment — not piped to a public model.</span></li>
+        <li><span class="ck">✓</span><span><b>It says it's AI.</b> Disclosure at the start of every call, recording notice where required.</span></li>
+        <li><span class="ck">✓</span><span><b>Every touch logged and version-stamped.</b> Provable consent, not a promise — the receipts exist if anyone asks.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <div class="eyebrow">Proof</div>
+      <h2>Not a concept. A system already running.</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="big">24/7</div><div class="lbl">Always-on, on hardware in the office</div></div>
+      <div class="stat"><div class="big">17</div><div class="lbl">CRM sub-accounts mapped &amp; connected</div></div>
+      <div class="stat"><div class="big">2,591</div><div class="lbl">Contacts audited, de-duped &amp; segmented</div></div>
+      <div class="stat"><div class="big">6-figure</div><div class="lbl">Re-engagement list surfaced in week one</div></div>
+    </div>
+    <p class="note">In its first audit for a multi-clinic group, the operator surfaced ~1,190 inherited contacts — a compliance gap <em>and</em> a re-engagement goldmine, <b>98% reachable today.</b> Value the practice already had, found by the machine before lunch.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <div class="eyebrow">How it works</div>
+      <h2>We do the building. You watch it start paying off.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div><h3>Tell us your practice</h3><p>A short, checkbox questionnaire — your services, your team, your current CRM and lead flow.</p></div></div>
+      <div class="step"><div><h3>We map your leads &amp; CRM</h3><p>We review where patients come from and where they're falling through, then scope the agent to fit.</p></div></div>
+      <div class="step"><div><h3>We build it — compliant — in our supplied HIPAA-compliant CRM</h3><p>Consent, disclosures, BAA, the works. You get an agent you can defend, not just deploy.</p></div></div>
+      <div class="step"><div><h3>It goes live; warm patients reach your team</h3><p>Highest-value automations first. You see contact rates and conversions move, with a report that proves it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="invest">
+  <div class="wrap reveal">
+    <div class="eyebrow">Investment</div>
+    <h2>Scoped to your practice. Built to pay for itself.</h2>
+    <p>Final scope depends on your verticals, your lead volume, and how much you want the agent to carry. Every build includes the compliance scaffolding and a watchdog that reports the impact.</p>
+    <div class="price">A deposit holds your spot in the build queue.<small>Pricing scoped on your call — [set your starting figure here]</small></div>
+    <div style="margin-top:28px"><a href="#start" class="btn btn-gold">Hold my build slot →</a></div>
+  </div>
+</section>
+
+<section class="start" id="start">
+  <div class="wrap reveal">
+    <div class="eyebrow">Start here</div>
+    <h2>Hold your spot.</h2>
+    <form class="form" onsubmit="return false;">
+      <div class="grid2">
+        <div><label for="fn">First name</label><input id="fn" type="text" placeholder="Jane" /></div>
+        <div><label for="ln">Last name</label><input id="ln" type="text" placeholder="Doe" /></div>
+      </div>
+      <div class="grid2">
+        <div><label for="em">Email</label><input id="em" type="email" placeholder="you@practice.com" /></div>
+        <div><label for="mb">Mobile</label><input id="mb" type="tel" placeholder="(805) 555-0100" /></div>
+      </div>
+      <div class="grid2">
+        <div><label for="co">Practice &amp; website</label><input id="co" type="text" placeholder="Clinic name + URL" /></div>
+        <div><label for="sz">Practice type</label>
+          <select id="sz">
+            <option>Med spa</option><option>Aesthetics practice</option>
+            <option>Weight-loss / telehealth clinic</option><option>Doctor's office</option>
+            <option>Multi-location group</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="consent">
+        <input id="c1" type="checkbox" />
+        <p><label for="c1" style="margin:0;color:inherit;font-size:12.5px;display:inline">I agree that AiVibeStack may contact me at the phone number and email I provided — including by <b>automated technology and AI-generated or prerecorded voice calls and text messages</b> — about my request. I understand my consent is not a condition of any purchase. Message &amp; data rates may apply; message frequency varies. Reply STOP to opt out, HELP for help. See our <a href="#">Privacy Policy</a>, <a href="#">Terms</a>, and <a href="#">Notice of Privacy Practices</a>.</label></p>
+      </div>
+
+      <button class="btn btn-light submit" type="submit">Send my estimate &amp; questionnaire →</button>
+      <p class="fineprint">Submitting connects to AiVibeStack's supplied HIPAA-compliant CRM, which delivers your estimate, a short questionnaire, and a calendar to book a Google Meet. We never sell your data.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap reveal">
+    <p class="verse">"…speaking the truth in love, that we may grow up…" — Ephesians 4:15</p>
+    <p class="body">No pressure, no fear-selling. The market will be far blunter than we ever would. We love clinics and the people who run them, and we want yours to thrive — positioned with the right tools at the right moment.</p>
+    <p class="vibe">Are you vibing? We are — for you.</p>
+    <p class="copy">© 2026 AiVibeStack · A Prestige Marketing USA company · Built compliant, by design.</p>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
