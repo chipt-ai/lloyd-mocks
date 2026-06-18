@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | GLP Wellness</title>
+  <meta name="description" content="Contact GLP Wellness by phone at (469) 457-2876, email at info@glpwellness.com, or use the online contact form placeholder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #10263f;
+      --ink-2: #30465e;
+      --muted: #6b7c8f;
+      --teal: #0d8c83;
+      --teal-dark: #086c66;
+      --emerald: #22966c;
+      --mint: #e5f5ef;
+      --cream: #fbf7ef;
+      --warm: #f5ead8;
+      --amber: #d89a3d;
+      --surface: #ffffff;
+      --line: #dce8e3;
+      --shadow: 0 18px 46px rgba(16, 38, 63, 0.1);
+      --shadow-soft: 0 10px 28px rgba(16, 38, 63, 0.08);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(34, 150, 108, 0.14), transparent 28rem),
+        radial-gradient(circle at 86% 12%, rgba(216, 154, 61, 0.12), transparent 23rem),
+        linear-gradient(180deg, var(--cream) 0%, #ffffff 44%, #f4fbf8 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    svg {
+      display: block;
+      flex: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(220, 232, 227, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--teal), var(--emerald));
+      box-shadow: 0 10px 24px rgba(13, 140, 131, 0.24);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--teal-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--teal);
+      color: #ffffff;
+      box-shadow: 0 14px 30px rgba(13, 140, 131, 0.25);
+      font-size: 0.96rem;
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: var(--teal-dark);
+      box-shadow: 0 18px 36px rgba(13, 140, 131, 0.3);
+    }
+
+    .button.secondary {
+      border-color: rgba(13, 140, 131, 0.22);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--teal-dark);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav .button {
+      min-height: 42px;
+      padding: 0 16px;
+      font-size: 0.86rem;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--teal-dark);
+      font-size: 0.79rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 5px rgba(34, 150, 108, 0.13);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 840px;
+      margin-bottom: 18px;
+      font-size: 4.35rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: 2.85rem;
+      line-height: 1.07;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin-bottom: 0;
+      color: var(--ink-2);
+      font-size: 1.12rem;
+    }
+
+    .subpage-hero {
+      position: relative;
+      padding: 76px 0 58px;
+      overflow: hidden;
+    }
+
+    .subpage-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(120deg, rgba(251, 247, 239, 0.96), rgba(251, 247, 239, 0.72)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='700' viewBox='0 0 1400 700'%3E%3Crect width='1400' height='700' fill='%23fbf7ef'/%3E%3Cg opacity='0.95'%3E%3Cpath d='M960 72c160 0 290 124 290 276S1120 624 960 624 670 500 670 348 800 72 960 72Z' fill='%23e5f5ef'/%3E%3Cpath d='M1044 168c84 0 152 66 152 148s-68 148-152 148-152-66-152-148 68-148 152-148Z' fill='%23ffffff'/%3E%3Cpath d='M630 510c178-88 386-102 612-38' fill='none' stroke='%230d8c83' stroke-width='28' stroke-linecap='round' opacity='0.17'/%3E%3Cpath d='M752 206c148-84 318-90 504-18' fill='none' stroke='%23d89a3d' stroke-width='22' stroke-linecap='round' opacity='0.2'/%3E%3Crect x='836' y='230' width='330' height='66' rx='8' fill='%23ffffff' stroke='%23dce8e3'/%3E%3Crect x='890' y='324' width='286' height='66' rx='8' fill='%23ffffff' stroke='%23dce8e3'/%3E%3Crect x='790' y='418' width='334' height='66' rx='8' fill='%23ffffff' stroke='%23dce8e3'/%3E%3Ccircle cx='878' cy='263' r='14' fill='%230d8c83'/%3E%3Ccircle cx='932' cy='357' r='14' fill='%2322966c'/%3E%3Ccircle cx='832' cy='451' r='14' fill='%23d89a3d'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(310px, 0.78fr);
+      align-items: center;
+      gap: 54px;
+      min-height: min(620px, calc(100vh - 76px));
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .info-panel,
+    .contact-card,
+    .form-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .info-panel {
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, #effaf6);
+    }
+
+    .panel-head strong,
+    .contact-row strong {
+      display: block;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .panel-head strong {
+      font-size: 1.08rem;
+    }
+
+    .panel-head span,
+    .contact-row span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .status-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--teal-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .contact-list {
+      display: grid;
+      margin: 0;
+      padding: 8px 24px 10px;
+      list-style: none;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .row-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--mint);
+      color: var(--teal-dark);
+    }
+
+    .surface-band {
+      background: rgba(255, 255, 255, 0.62);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-card,
+    .form-card {
+      padding: 28px;
+    }
+
+    .contact-methods {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .method {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfdfc;
+    }
+
+    .method svg {
+      width: 24px;
+      height: 24px;
+      color: var(--teal-dark);
+    }
+
+    .method strong {
+      display: block;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .method span,
+    .method a {
+      color: var(--ink-2);
+      font-weight: 700;
+    }
+
+    .method small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfdfc;
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.96rem;
+    }
+
+    input {
+      min-height: 48px;
+      padding: 0 14px;
+    }
+
+    textarea {
+      min-height: 138px;
+      padding: 13px 14px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8a98a8;
+    }
+
+    .form-note {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .cta-section {
+      padding: 76px 0 88px;
+    }
+
+    .cta-band {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 34px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(8, 108, 102, 0.96), rgba(34, 150, 108, 0.92)),
+        var(--teal-dark);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-band h2 {
+      font-size: 2.65rem;
+    }
+
+    .cta-band p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .cta-band .button {
+      background: #ffffff;
+      color: var(--teal-dark);
+      box-shadow: 0 16px 34px rgba(16, 38, 63, 0.18);
+    }
+
+    .footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .footer p {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer strong {
+      color: var(--ink);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px 18px;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--teal-dark);
+    }
+
+    .disclaimer {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(216, 154, 61, 0.55);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-layout,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-layout {
+        gap: 28px;
+        min-height: auto;
+      }
+
+      .info-panel {
+        max-width: 620px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-menu {
+        display: none;
+        width: 100%;
+        flex: 0 0 100%;
+        align-items: stretch;
+        padding: 14px 0 4px;
+        border-top: 1px solid var(--line);
+      }
+
+      .nav.is-open .nav-menu {
+        display: grid;
+        gap: 14px;
+      }
+
+      .nav-links {
+        display: grid;
+        gap: 12px;
+      }
+
+      .nav .button,
+      .hero-actions .button {
+        width: 100%;
+        min-height: 46px;
+      }
+
+      .subpage-hero {
+        padding: 50px 0 38px;
+      }
+
+      h1 {
+        font-size: 3.05rem;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      .section,
+      .cta-section {
+        padding: 58px 0;
+      }
+
+      .cta-band {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 26px;
+      }
+
+      .cta-band h2 {
+        font-size: 2rem;
+      }
+
+      .cta-band .button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      .panel-head,
+      .contact-list {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .contact-card,
+      .form-card {
+        padding: 22px;
+      }
+
+      .method {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="GLP Wellness home">
+        <span class="brand-mark">GLP</span>
+        <span>GLP Wellness</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="sr-only">Menu</span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="weight-loss.html">Weight Loss</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </div>
+        <a class="button" href="get-started.html">See If I Qualify</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="subpage-hero">
+      <div class="container hero-layout">
+        <div>
+          <span class="eyebrow">Contact GLP Wellness</span>
+          <h1>Questions about getting started?</h1>
+          <p class="lead">Call, email, or send a message to the GLP Wellness team. For treatment-specific questions during care, provider messaging is available through your program.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+14694572876">Call (469) 457-2876</a>
+            <a class="button secondary" href="mailto:info@glpwellness.com">Email Us</a>
+          </div>
+        </div>
+
+        <aside class="info-panel" aria-label="Contact summary">
+          <div class="panel-head">
+            <div>
+              <strong>Support details</strong>
+              <span>Phone, email, and hours</span>
+            </div>
+            <span class="status-pill">Texas LLC</span>
+          </div>
+          <ul class="contact-list">
+            <li class="contact-row">
+              <span class="row-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <strong><a href="tel:+14694572876">(469) 457-2876</a></strong>
+                <span>Phone support for general questions.</span>
+              </div>
+            </li>
+            <li class="contact-row">
+              <span class="row-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4V4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <strong><a href="mailto:info@glpwellness.com">info@glpwellness.com</a></strong>
+                <span>Email for support and account questions.</span>
+              </div>
+            </li>
+            <li class="contact-row">
+              <span class="row-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </span>
+              <div>
+                <strong>Monday-Friday, 9:00 AM-5:00 PM CT</strong>
+                <span>Messages after hours are reviewed the next business day.</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section surface-band">
+      <div class="container contact-grid">
+        <aside class="contact-card">
+          <span class="eyebrow">Reach us</span>
+          <h2>Contact information</h2>
+          <p class="lead">Use phone or email for general GLP Wellness questions, account support, or help with the online eligibility check.</p>
+          <div class="contact-methods">
+            <div class="method">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:+14694572876">(469) 457-2876</a>
+                <small>General support and questions.</small>
+              </div>
+            </div>
+            <div class="method">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4V4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@glpwellness.com">info@glpwellness.com</a>
+                <small>Support and account questions.</small>
+              </div>
+            </div>
+            <div class="method">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              <div>
+                <strong>Hours</strong>
+                <span>Monday-Friday, 9:00 AM-5:00 PM CT</span>
+                <small>Closed Saturday-Sunday.</small>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="form-card" aria-labelledby="contact-form-title">
+          <span class="eyebrow">Send a message</span>
+          <h2 id="contact-form-title">Contact form</h2>
+          <p class="lead">Share your contact details and a short note. This form is a placeholder for the GLP Wellness contact workflow.</p>
+          <form action="#" method="post">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000">
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="How can we help?"></textarea>
+            </div>
+            <button class="button" type="button">Send Message</button>
+            <p class="form-note">For urgent medical concerns, call 911 or seek emergency care.</p>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Ready to begin the eligibility check?</h2>
+            <p>Start online when you are ready. Prescription products require licensed provider review, and not everyone qualifies.</p>
+          </div>
+          <a class="button" href="get-started.html">See If I Qualify</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p><strong>GLP Wellness</strong> &middot; a Texas LLC</p>
+        <p><a href="tel:+14694572876">(469) 457-2876</a> &middot; <a href="mailto:info@glpwellness.com">info@glpwellness.com</a></p>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="index.html">Home</a>
+        <a href="weight-loss.html">Weight Loss</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="get-started.html">Get Started</a>
+      </nav>
+      <p class="disclaimer">Prescription products require an online evaluation by a licensed healthcare provider; not everyone will qualify. Individual results vary. This site does not provide medical advice.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector(".nav");
+    const toggle = document.querySelector(".menu-toggle");
+
+    if (nav && toggle) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+  </script>
+</body>
+</html>
